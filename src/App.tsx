@@ -3,6 +3,8 @@ import Input from './components/Input';
 
 interface ExpressCandidato {
   cep:string;
+  price:number;
+  cpf:string;
 }
 
 const App: React.FC = () => {
@@ -17,7 +19,10 @@ const App: React.FC = () => {
   }, [candidato]);
   return (
     <div>
-        <Input placeholder="99999-999" name="cep" onChange={handleChange}/>
+        <Input placeholder="99999-999" name="cep" mask="cep" onChange={handleChange}/>
+        <Input placeholder="9.999,99" name="price" mask="currency" onChange={handleChange}/>
+        <Input placeholder="999.999.999-99" name="cpf" mask="cpf" onChange={handleChange}/>
+
         <button onClick={() => console.log(candidato)}>Salvar</button>
     </div>
   );
