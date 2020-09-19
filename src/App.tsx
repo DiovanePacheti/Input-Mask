@@ -1,11 +1,12 @@
-import React from 'react';
-import './App.css';
+import React, { useState } from 'react';
 import Input from './components/Input';
 
 const App: React.FC = () => {
+
+  const [candidato, setCandidato] = useState();
   return (
     <div>
-        <Input palceholder="99999-999" />
+        <Input placeholder="99999-999" />
     </div>
   );
 }
